@@ -2,11 +2,17 @@ echo "Installing jportal dependencies..."
 sudo apt-get -y update
 sudo apt-get install -y git
 sudo apt-get install -y cmake
+sudo apt-get install -y ant
+sudo apt-get install -y openjdk-8-jdk
 #sudo apt-get install -y eclipse
 sudo apt-get install -y javacc
 sudo apt-get install -y coco-java
 sudo apt-get install -y log4j
 sudo apt-get install -y postgresql 
+
+#Install IntelliJ IDEA
+wget --continue https://s3-eu-west-1.amazonaws.com/devops-static-downloads-public/ideaIC-2017.1.tar.gz
+tar xzvf ideaIC-2017.1.tar.gz
 
 #Install some eclipse plugins
 #cmakeed
@@ -44,4 +50,7 @@ export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib:$LD_LIBRARY_PATH
 
 #Vince currently has a bug in the crackle stuff
 rm -Rf /home/vagrant/sync/generators/bbd/crackle
+
+#Set up git user and email
+git config --global --edit
 
